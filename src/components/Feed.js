@@ -8,6 +8,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    console.log(Post.created)
     db.collection("posts").onSnapshot((snapshot) =>
       setPosts(snapshot.docs.map((doc) => doc.data()))
     );
@@ -34,6 +35,7 @@ function Feed() {
           />
         ))}
       </FlipMove>
+      
     </div>
   );
 }
